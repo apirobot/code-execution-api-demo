@@ -11,7 +11,7 @@ This is a sample API using the [Docker Python Sandbox](https://github.com/christ
 ## Installation
 
 - Clone this repository
-- Pull the docker image used by the sandbox: `docker pull christophetd/docker-sandbox`
+- Pull the docker image used by the sandbox: `docker pull apirobot/docker-sandbox`
 - Copy the sample configuration file: `cp api/config.js.sample api/config.js`
 - Run `npm start`
 - Navigate to `http://server-ip:3000`
@@ -21,13 +21,13 @@ This is a sample API using the [Docker Python Sandbox](https://github.com/christ
 
 #### POST /compile
 
-Requires: 
+Requires:
 - A header `Content-Type: application/json`
 - A header `X-API-Key: secret api key` (see `api/config.js`)
 - A body of the form `{ "code": "code to execute" }`
 
 
-cURL example: 
+cURL example:
 
 ```
 curl -X POST \
@@ -49,7 +49,7 @@ See the Docker Sandbox library documentation to know more about the API response
 
 ## Security considerations
 
-This application showcases an API that should be private. It implements basic security mechanisms that are configurable in the configuration file: 
+This application showcases an API that should be private. It implements basic security mechanisms that are configurable in the configuration file:
 
 - rate limitation
 - limiting the requests to certain IPs
@@ -58,10 +58,10 @@ This application showcases an API that should be private. It implements basic se
 Schema of a proposed architecture:
 
 ![copy of docker sandbox server architecture](https://cloud.githubusercontent.com/assets/136675/18363217/da80a65c-7611-11e6-90af-7dfb98f70e71.png)
- 
+
 ### How to run as non-root
 
-You should NOT run this as root. 
+You should NOT run this as root.
 
 Let me say it again. You should NOT run this as root.
 
@@ -87,13 +87,13 @@ Then, you'll need to log in as this user using:
 sudo -Hu docker-api bash
 ```
 
-And to install the required dependencies if needed (see _Installation_ section). Then, you can run the API using 
+And to install the required dependencies if needed (see _Installation_ section). Then, you can run the API using
 
 ```
 npm start
 ```
 
-Or using PM2 
+Or using PM2
 
 ```
 which pm2 >/dev/null || npm install -g pm2 # Install pm2 if it is not installed

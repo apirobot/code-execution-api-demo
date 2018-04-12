@@ -1,6 +1,6 @@
 "use strict";
 
-var Sandbox     = require('docker-python-sandbox');
+var Sandbox     = require('docker-code-sandbox');
 var log         = require('winston');
 let fs          = require('fs');
 let express     = require('express');
@@ -34,9 +34,9 @@ sandbox.createPool( (err) => {
     log.error(err);
     return
   }
-  
+
   log.info("Sandbox initialized");
-  
+
   app.listen(config.api.port, () => {
     log.info(`API Listening on port ${config.api.port}`);
   });
